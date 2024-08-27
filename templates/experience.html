@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Experience</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <div class="theme-toggle-container">
+        <a href="#" class="theme-toggle-button" id="theme-toggle" aria-label="Toggle Theme">
+            <!-- Icons for dark and light modes -->
+            <span class="theme-toggle-icon-dark">🌙</span>
+            <span class="theme-toggle-icon-light">☀️</span>
+        </a>
+    </div>
+    <header>
+        <h1  class="animate">Professional Experience</h1>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('skills') }}">Skills</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('experience') }}">Experience</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+    <main>
+          <section class="roadmap">
+            <h2>My Journey so far!</h2>
+            <div class="timeline">
+              <div class="timeline-item" id="item1">
+                <img src="../static/images/companies/anuvu.jpg" alt="Company Logo" class="round-image">
+                <div class="timeline-content">
+                    <a href="https://www.anuvu.com/" class="more-info-link">Anuvu</a>
+                    <h3 class="heading-right">June, 2022 - May, 2024</h3>
+                </div>
+                <div class="experience">
+                    <h4 class="heading-left">Software Development Engineer</h4>
+                    <p>• As a backend and framework developer in a team of 5, I led the initiative to implement a Jenkins CI/CD pipeline and automate the provisioning of AWS instances.</p>
+                    <p>• Built modules for data transformation and analysis using SAS, Pandas, and Airflow, ensuring the efficient and effective use of data within our microservices.</p>
+                    <p>• Contributed significantly to the development and unit testing of our 6 microservices, achieving 87% code coverage through extensive unit testing.</p>
+                    <p>• Oversaw the official releases for 3 of the live products.</p>
+                    <p>• Additionally, monitored testing for over 25 games on platforms like PlayCanvas, PixiJs.</p>
+                    <br><p>Technical Stack: Python, Pandas, Numpy, Pytest, REST, HTML5, JavaScript, Node.js, Git, OOP, Typescript, MySQL, AWS, DataBricks, Bash, BitBucket, CI/CD, Docker, Jcasc, Jenkins, Jira, Confluence, Groovy, Postman, SAS, SQL Server, Unit-Testing, Mock.</p>
+                </div>
+              </div>
+              <div class="timeline-item" id="item2">
+                <img src="../static/images/companies/solut.jpeg" alt="Company Logo" class="round-image">
+                <div class="timeline-content">
+                    <a href="https://www.solut.ca/" class="more-info-link">Solut</a>
+                    <h3 class="heading-left">Feb, 2022 - May, 2022</h3>
+                </div>
+                <div class="experience">
+                    <h4 class="heading-left">Software Development Engineer</h4>
+                    <p>• As a full-stack developer, I designed and implemented an interactive web application using Python-Flask for on-field agents.</p>
+                    <p>• The application featured role-based authorization to manage over 1 million records, ensuring secure and efficient access.</p>
+                    <p>• Collaborated with clients to gather their specific requirements and ensure the application met their needs. Additionally, I conducted unit testing using Pytest to guarantee the application's reliability and functionality.</p>
+                    <br><p>Technical Stack: Python, Pandas, Flask, Jupyter Notebook, PyCharm Libraries, Azure Database, MySQL, NoSQL, Git, Github, CI/CD pipelines, Javascript, JQuery, HTML, Pytest.</p>
+                </div>
+              </div>
+              <div class="timeline-item" id="item3">
+                <img src="../static/images/companies/kyrionTechnologies.jpg" alt="Company Logo" class="round-image">
+                <div class="timeline-content">
+                    <a href="https://kyrion.in/?route=account%2Flogin" class="more-info-link">Kyrion Technologies</a>
+                    <h3 class="heading-right">May, 2018 - Dec, 2018</h3>
+                </div>
+                <div class="experience">
+                    <h4 class="heading-left">Software Development Intern</h4>
+                    <p>• Developed an artificial intelligence system for improving handwritten digit recognition.</p>
+                    <p>• As part of a software development team, I developed a Python application using OpenCV to train a model on a dataset of 500 handwritten digits.</p>
+                    <p>• This system achieved a 90% accuracy rate, significantly enhancing the efficiency of automated data entry processes.</p>
+                    <br><p>Technical Stack: Windows 8, Pytest, Git, Jupyter Notebook, PyCharm Libraries, Postgres Database, OpenCV-3xx.jar.</p>
+                </div>
+              </div>
+              <div class="timeline-item" id="item4">
+                <img src="../static/images/companies/tripString.png" alt="Company Logo" class="round-image">
+                <div class="timeline-content">
+                    <a href="https://www.tripstring.com/" class="more-info-link">Trip String</a>
+                    <h3 class="heading-right">June, 2017 - Jan, 2018</h3>
+                </div>
+                <div class="experience">
+                    <h4 class="heading-left">Software Development Intern</h4>
+                    <p>• Designed and implemented a travel website which utilized user input to automatically rank and present alternative trip packages based on the filters supplied by the user.</p>
+                    <br><p>Technical Stack: HTML, CSS, JavaScript, WordPress, Windows 10.</p>
+                </div>
+              </div>
+              <a href="{{ url_for('projects') }}"><span class="arrow-navigation-left">&larr;</span></a>
+              <a href="{{ url_for('contact') }}"><span class="arrow-navigation-right">&rarr;</span></a>
+            </div>
+          </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; 2024 Taranjyot Singh. All rights reserved.</p>
+            </div>
+            <div class="social-media-icons">
+                <a href="https://www.linkedin.com/in/taranjyot-singh/" class="fa fa-linkedin" target="_blank"></a>
+                <a href="https://github.com/TaranjyotS" class="fa fa-github" target="_blank"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

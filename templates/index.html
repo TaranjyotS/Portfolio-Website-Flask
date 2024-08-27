@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <header>
+        <h1 class="animate">TARANJYOT SINGH</h1>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('skills') }}">Skills</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('experience') }}">Experience</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Background Container -->
+        <div id="background-container">
+            <!-- Background Image -->
+            <div id="background-image">
+                <h2>Hi There, Programmer !</h2>
+                <a href="{{ url_for('contact') }}">Let's connect and see how we can build the future together!</a>
+                <a href="{{ url_for('skills') }}"><span class="arrow-navigation-right">&rarr;</span></a>
+            </div>   
+            <!-- Overlay Content -->
+            <div id="overlay-content">
+                <div id="cartoon">
+                    <img src="../static/gif/dev.gif" alt="Animated Cartoon" class="circular-gif">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; 2024 Taranjyot Singh. All rights reserved.</p>
+            </div>
+            <div class="social-media-icons">
+                <a href="https://www.linkedin.com/in/taranjyot-singh/" class="fa fa-linkedin" target="_blank"></a>
+                <a href="https://github.com/TaranjyotS" class="fa fa-github" target="_blank"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

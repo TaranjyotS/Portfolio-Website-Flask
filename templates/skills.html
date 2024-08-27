@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+    <div class="theme-toggle-container">
+        <a href="#" class="theme-toggle-button" id="theme-toggle" aria-label="Toggle Theme">
+            <!-- Icons for dark and light modes -->
+            <span class="theme-toggle-icon-dark">🌙</span>
+            <span class="theme-toggle-icon-light">☀️</span>
+        </a>
+    </div>
+    <header>
+        <h1  class="animate">Skills</h1>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('skills') }}">Skills</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('experience') }}">Experience</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="skills">
+            <div class="skills-container">
+                <div class="skills-item" data-aos="fade-up">
+                    <div class="icon">
+                        <img src="../static/images/skills/backend.jpeg" alt="Icon 1">
+                    </div>
+                    <h2>Back End</h2>
+                    <p>Experienced in both functional and OOP:
+                        <li>Python</li>
+                        <li>Node Js</li>
+                        <li>Java</li>
+                        <li>Groovy</li>
+                        <li>SQL</li>
+                    </p>
+                </div>
+                <div class="skills-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon">
+                        <img src="../static/images/skills/frontend.jpeg" alt="Icon 2">
+                    </div>
+                    <h2>Front End</h2>
+                    <p>
+                        <li>CSS3</li>
+                        <li>HTML5</li>
+                        <li>React</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                    </p>
+                </div>
+                <div class="skills-item" data-aos="fade-up">
+                    <div class="icon">
+                        <img src="../static/images/skills/databases.jpeg" alt="Icon 1">
+                    </div>
+                    <h2>Databases</h2>
+                    <p>
+                        <li>Redis</li>
+                        <li>PostgreSQL</li>
+                        <li>ElasticSearch</li>
+                        <li>MongoDB</li>
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                    </p>
+                </div>
+                <div class="skills-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon">
+                        <img src="../static/images/skills/softSkills.jpeg" alt="Icon 3">
+                    </div>
+                    <h2>Soft Skills</h2>
+                    <p>
+                        <li>Adaptability</li>
+                        <li>Collaboration</li>
+                        <li>Communication</li>
+                        <li>Problem Solving</li>
+                        <li>Time Management</li>
+                    </p>
+                </div>
+                <a href="{{ url_for('index') }}"><span class="arrow-navigation-left">&larr;</span></a>
+                <a href="{{ url_for('projects') }}"><span class="arrow-navigation-right">&rarr;</span></a>
+            </div>
+            <div class="resume-button-container">
+                <a href="../static/resume/Taranjyot_Singh.pdf" class="resume-button" target="_blank" rel="noopener noreferrer">View Resume</a>
+                <a href="../static/publications/elasticSearchResearchPaper.pdf" class="resume-button" target="_blank">View Publications</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; 2024 Taranjyot Singh. All rights reserved.</p>
+            </div>
+            <div class="social-media-icons">
+                <a href="https://www.linkedin.com/in/taranjyot-singh/" class="fa fa-linkedin" target="_blank"></a>
+                <a href="https://github.com/TaranjyotS" class="fa fa-github" target="_blank"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

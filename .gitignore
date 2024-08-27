@@ -1,0 +1,9 @@
+# Images excluded
+static/images/companies/*
+static/images/projects/*
+
+# Ignore database file
+instance
+
+#Ignore build folder
+build

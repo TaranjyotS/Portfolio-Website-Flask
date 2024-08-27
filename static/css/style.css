@@ -1,0 +1,891 @@
+@font-face {
+    font-family: 'ValorantFont';
+    src: url('../css/fonts/Valorant\ Font.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ValorantFont', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Position the toggle button on the left side */
+.theme-toggle-container {
+    position: absolute;
+    left: 10px;
+    top: 95px;
+    transform: translateY(-50%);
+}
+
+/* Toggle button style */
+.theme-toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #1e1e1e; /* Default background color */
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 100%;
+    line-height: 60px; /* Center text vertically */
+    text-align: center; /* Center text horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+/* Icon for dark mode */
+.theme-toggle-icon-dark {
+    display: block;
+}
+
+/* Icon for light mode (hidden by default) */
+.theme-toggle-icon-light {
+    display: none;
+}
+
+/* Hover effect */
+.theme-toggle-button:hover {
+    background-color: #b8eaff; /* Darker color on hover */
+    transform: scale(1.1);
+}
+
+/* Toggle button active state */
+.theme-toggle-button.active {
+    background-color: #ffd700; /* Highlight color for the active theme */
+}
+
+/* Show the light mode icon when the button is active */
+.theme-toggle-button.active .theme-toggle-icon-light {
+    display: block;
+}
+
+/* Hide the dark mode icon when the button is active */
+.theme-toggle-button.active .theme-toggle-icon-dark {
+    display: none;
+}
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+header {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    position: static;
+    top: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.typing-title {
+    font-size: 1.5em;
+    margin-bottom: 200px;
+    overflow: hidden; /* Ensures the text is hidden during typing animation */
+    white-space: nowrap; /* Keeps text in one line */
+    border-right: .15em solid #fff; /* Cursor effect */
+    animation: typing 2.5s steps(30, end), blink-caret .75s step-end infinite;
+    color: #fff;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 70%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #fff; }
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns navbar to the right */
+}
+
+.navbar a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate {
+    animation: slideIn 1s ease-out;
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+    text-align: center;
+    justify-content: center;
+}
+
+h1 {
+    margin: 10px 0 20px 0;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    justify-content: center;
+}
+
+h4{
+    margin: 0 0 20px 0;
+    color: white;
+}
+
+p {
+    margin: 5px 0;
+    color: #fff;
+    text-align: center;
+}
+
+/* Contact Form styling */
+#contact-form {
+    background-color:#5a84b1;
+    padding: 2% 4% 4% 3%;
+    border: 2px solid #fff;
+    max-width: 100%;
+    height: auto;
+    float: left;
+    left: 45%;
+    position: relative;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    margin-left: -15%;
+    border-radius: 2%;
+    -webkit-border-radius: 2%;
+    -moz-border-radius: 2%;
+ }
+ #contact-form input,   
+ #contact-form select,   
+ #contact-form textarea,   
+ #contact-form label { 
+    font-size: 100%;  
+    margin-bottom: 2%;
+    font-family: 'ValorantFont', san-serif;
+ } 
+ #contact-form input,   
+ #contact-form select,   
+ #contact-form textarea { 
+    width: 100%;
+    background: #fff;
+    border: 0; 
+    -moz-border-radius: 2%;  
+    -webkit-border-radius: 2%;  
+    border-radius: 2%;
+    margin-bottom: 4%;  
+    padding: 1%;  
+ }  
+ #contact-form input:focus,   
+ #contact-form select:focus,   
+ #contact-form textarea:focus {
+    background-color: #E5E6E7; 
+ }  
+ #contact-form textarea {
+    height: 150px;
+ }
+ #contact-form button[type="submit"] {
+    cursor: pointer;
+    font-family: 'ValorantFont';
+    width: 100%;
+    border: none;
+    background: #1e1e1e;
+    background-image: linear-gradient(bottom, #1e1e1e 0%, #1e1e1e 52%);
+    background-image: -moz-linear-gradient(bottom, #1e1e1e 0%, #1e1e1e 52%);
+    background-image: -webkit-linear-gradient(bottom, #1e1e1e 0%, #1e1e1e 52%);
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 3%;
+    border-radius: 2%;
+ }
+ #contact-form button[type="submit"]:hover {
+    background-image: linear-gradient(bottom, #0056b3 0%, #0056b3 52%);
+    background-image: -moz-linear-gradient(bottom, #0056b3 0%, #0056b3 52%);
+    background-image: -webkit-linear-gradient(bottom, #0056b3 0%, #0056b3 52%);
+    -webkit-transition:  background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+ }
+ #contact-form button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+ }
+ input:required, textarea:required {  
+    box-shadow: none;
+    -moz-box-shadow: none;  
+    -webkit-box-shadow: none;  
+    -o-box-shadow: none;  
+ } 
+ #contact-form .required {  
+    font-weight: bold;  
+    color: #E5E6E7;      
+ }
+
+ #contact-form h1 {
+    text-align: center;
+ }
+ 
+ /* Hide success/failure message
+    (especially since the php is missing) */
+ #failure, #success {
+    color: #6EA070; 
+    display:none;  
+ }
+ 
+ /* Make form look nice on smaller screens */
+ @media only screen and (max-width: 580px) {
+    #contact-form{
+       left: 3%;
+       margin-right: 3%;
+       width: 88%;
+       margin-left: 0;
+       padding-left: 3%;
+       padding-right: 3%;
+    }
+ }
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Button Container */
+.resume-button-container {
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 1%; /* Adjust spacing between buttons */
+}
+
+.resume-button {
+    display: inline-block;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 1% 1%;
+    margin: 0 10px;
+    font-size: 100%;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.resume-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.project {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 0.5%;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.footer-text p {
+    color: #fff;
+}
+
+/* Footer content styling */
+.footer-content {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Social media icons in footer */
+.social-media-icons {
+    display: flex;
+    gap: 40%;
+}
+
+/* Social media icon styling */
+.social-media-icons a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 150%; /* Adjust size as needed */
+}
+
+.social-media-icons a:hover {
+    color: #0073e6; /* Change color on hover */
+}
+  
+/* Roadmap section styling */
+.roadmap {
+    padding: 0%;
+    background: #fff;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+  
+.roadmap h2 {
+    text-align: start;
+    margin-bottom: 4%;
+    font-size: 2rem;
+    color: #333;
+}
+  
+/* Timeline styling for experience page */
+.timeline {
+    position: relative;
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+  
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 1%;
+    background: #fff;
+    transform: translateX(-50%);
+}
+  
+.timeline-item {
+    position: relative;
+    margin: 4% 0;
+    padding: 1%;
+    background: #5a84b1;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    left: 70%;
+    transform: translateX(-50%);
+}
+  
+.timeline-item:nth-child(even) {
+    left: 2%;
+    transform: translateX(0);
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Aligns items to the start and end of the container */
+    padding: 5px;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 100%;
+}
+
+.timeline-content a{
+    color: #fff;
+    font-size: 150%;
+}
+
+.timeline-content h3{
+    color: #fff;
+    font-size: 80%;
+}
+
+.heading-left {
+    text-align: left;
+    color: #fff;
+}
+  
+.heading-right {
+    text-align: right;
+    margin: 90;
+}
+
+.experience p {
+    margin: 5px 0;
+    color: #fff;
+    text-align: justify;
+    font-size: 90%;
+    line-height: 1.5;
+}
+  
+.timeline-content p {
+    margin: 5px 0;
+    color: #fff;
+}
+  
+.timeline-content a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+/* Styling for the round image */
+.round-image {
+    position: absolute;
+    top: -8%;
+    right: -3%;
+    width: 6%; /* Adjust the width as needed */
+    height: 13%; /* Adjust the height as needed */
+    border-radius: 50%;
+    background-color: #fff;
+    object-fit: fill; /* Ensures the image covers the container while maintaining its aspect ratio */
+    border: 3px solid #fff; /* Optional: adds a border around the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow effect */
+    margin-top: 2%; /* Adds some space above the image */
+}
+
+/* Projects */
+/* Filter Container*/
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+
+.filter-heading {
+    font-size: 90%;
+    margin-right: 1%;
+}
+
+.filter {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.filter-button {
+    background: #f8f5f5;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 100%;
+    font-family: 'ValorantFont';
+    transition: background 0.3s ease;
+}
+
+.filter-button:hover {
+    background: #a8a7a7;
+    color: #fff;
+}
+
+/* Project section styling */
+#projects {
+    padding: 2%;
+    text-align: center;
+}
+  
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+}
+  
+.project-block {
+    position: relative; /* Make positioning relative to the project block */
+    display: block; /* Make the <a> tag a block element */
+    background: #5a84b1;
+    border: 1px solid #ddd;
+    border-radius: 5%;
+    padding: 2%;
+    width: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit text color */
+    margin-bottom: 1%; /* Add margin to create space between rows */
+}
+
+.project-block:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05)
+}
+  
+.project-image {
+    width: 100%;
+    height: 50%;
+    border-radius: 5%;
+}
+
+.project-block h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 100%;
+}
+  
+.project-block p {
+    color: #fff;
+    text-align: center;
+    margin-bottom: -30%; /* Adjust the value as needed for space */
+    font-size: 100%;
+}
+  
+.project-link-container {
+    position: absolute;
+    bottom: 0%; /* Adjust as needed */
+    left: 0%; /* Adjust as needed */
+}
+
+
+/* skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    gap: 1%;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    padding: 1%;
+}
+
+.skills-item {
+    background: #5a84b1;
+    border: 1px solid #ddd;
+    border-radius: 2%;
+    padding: 0.5%;
+    width: 16%;
+    margin-left: 2%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: static;
+    font-size: 90%;
+}
+
+.skills-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    margin-bottom: 10%;
+}
+
+.icon img {
+    height: 100%;
+    width: 100%; /* Adjust size as needed */
+}
+
+.skills-item h2 {
+    margin: 1% 1%;
+    color: #fff;
+}
+
+.skills-item p {
+    color: #fff;
+    margin: 1%;
+}
+
+.skills-item li {
+    color: #fff;
+}
+
+/* AOS Animations (Optional) */
+[data-aos] {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Active state (dark theme) */
+.theme-toggle-button.active {
+    background-color: #ffd700; /* Highlight color for the active theme */
+}
+
+/* Show light mode icon when in dark theme */
+body.dark .theme-toggle-icon-light {
+    display: block;
+}
+
+/* Hide dark mode icon when in dark theme */
+body.dark .theme-toggle-icon-dark {
+    display: none;
+}
+
+/* Light theme styles */
+body.light {
+    background-color: #f4f4f4;
+    color: #000;
+}
+
+/* Dark theme styles */
+body.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark .roadmap {
+    background: #333;
+}
+
+body.dark .roadmap h2{
+    color: #fff;
+}
+
+body.dark .filter-button {
+    background: #333;
+    color: #fff;
+}
+
+body.dark .filter-button:hover {
+    background: #666;
+}
+
+/* Arrow Navigation Right */
+.arrow-navigation-right {
+    position: fixed;
+    right: 1%; /* Distance from the right edge */
+    top: 55%; /* Center vertically */
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3%;
+    height: 6%;
+    background-color: #1e1e1e;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.arrow-navigation-right:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.arrow-navigation-right:focus {
+    outline: none;
+}
+
+/* Arrow Navigation Right */
+.arrow-navigation-left {
+    position: fixed;
+    left: 1%; /* Distance from the left edge */
+    top: 55%; /* Center vertically */
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3%;
+    height: 6%;
+    background-color: #1e1e1e;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.arrow-navigation-left:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.arrow-navigation-left:focus {
+    outline: none;
+}
+
+/* Background Container */
+#background-container {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    overflow: hidden; /* Hide overflow to keep content clean */
+}
+
+/* Background Image */
+#background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/background/coder.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1; /* Place background behind other content */
+}
+
+/* Overlay Content */
+#overlay-content {
+    position: absolute;
+    top: 65%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* White text color for contrast */
+    z-index: 2; /* Ensure content is on top of the background */
+    width: 38%; /* Adjust width to prevent overflow */
+    padding: 0 10px; /* Add padding for small screens */
+}
+
+#background-image h2 {
+    margin-top: 17%;
+    margin-left: -60%;
+    font-size: 2vw;
+    color: #fff;
+}
+
+#background-image a {
+    display: block;
+    margin-top: 12%;
+    margin-left: 25%;
+    font-size: 120%;
+    overflow: hidden; /* Ensures the text is hidden during typing animation */
+    white-space: nowrap; /* Keeps text in one line */
+    border-right: .15em solid #fff; /* Cursor effect */
+    animation: typing 2.5s steps(30, end), blink-caret .75s step-end infinite;
+    color: #fff;
+    text-align: center;
+}
+
+/* GIF Styling */
+#cartoon {
+    margin-top: 0; /* Space between text and GIF */
+}
+
+#cartoon img {
+    max-width: 100%; /* Ensure GIF does not overflow */
+    height: auto;
+}
+
+/* Circular GIF */
+.circular-gif {
+    width: 45%; /* Adjust size as needed */
+    height: 85%; /* Ensure height matches width for a perfect circle */
+    border-radius: 50%; /* Creates a circular shape */
+    object-fit: cover; /* Ensures GIF fits well within the circle */
+    margin-top: -25%; /* Space between text and GIF */
+    margin-left: 8%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    #overlay-content {
+        width: 90%;
+    }
+
+    #background-image h2 {
+        font-size: 6vw;
+    }
+    
+    #background-image a {
+        font-size: 3.5vw;
+    }
+
+    .circular-gif {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    #overlay-content {
+        top: 40%; /* Adjust vertical position */
+        left: 50%;
+        transform: translate(-50%, -40%);
+    }
+
+    #background-image h2 {
+        font-size: 8vw;
+    }
+
+    .circular-gif {
+        width: 60%;
+        height: 60%;
+        margin-top: 10%; /* Increased margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #overlay-content {
+        top: 30%; /* Adjust vertical position */
+        left: 50%;
+        transform: translate(-50%, -30%);
+    }
+
+    #background-image h2 {
+        font-size: 10vw;
+    }
+
+    #background-image a {
+        font-size: 5vw;
+    }
+
+    .circular-gif {
+        width: 70%;
+        height: 70%;
+        margin-top: 15%; /* Increased margin for smaller screens */
+    }
+}

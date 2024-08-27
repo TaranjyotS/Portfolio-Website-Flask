@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - My Projects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <div class="theme-toggle-container">
+        <a href="#" class="theme-toggle-button" id="theme-toggle" aria-label="Toggle Theme">
+            <!-- Icons for dark and light modes -->
+            <span class="theme-toggle-icon-dark">🌙</span>
+            <span class="theme-toggle-icon-light">☀️</span>
+        </a>
+    </div>
+    <header>
+        <h1  class="animate">My Projects</h1>
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('skills') }}">Skills</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('experience') }}">Experience</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="projects">
+            <div class="filter-container">
+                <h3 class="filter-heading">Filter By:</h3>
+                <div class="filter">
+                    <button class="filter-button" data-filter="all">All</button>
+                    <button class="filter-button" data-filter="web">Web Development</button>
+                    <button class="filter-button" data-filter="quality">Quality Analysis</button>
+                    <button class="filter-button" data-filter="ml">Machine Learning</button>
+                </div>
+            </div>
+            <div class="project-container">
+                <a href="https://github.com/TaranjyotS/Portfolio-Website" target="_blank" class="project-block" data-category="web">
+                    <img src="../static/images/projects/portfolio.jpeg" class="project-image">
+                    <h2>Portfolio Website</h2>
+                    <p>Flask web application to create a portfolio.</p>
+                </a>
+                <a href="https://github.com/TaranjyotS/PCA-for-Diagnosis-of-Heart-Disease" target="_blank" class="project-block" data-category="ml">
+                    <img src="../static/images/projects/pca.jpeg" class="project-image">
+                    <h2>Machine Learning-Based Diagnostic Systems for Heart Disease</h2>
+                    <p>Study the performance of clustering algorithms on the Cleveland heart disease dataset.</p>
+                </a>
+                <a href="https://github.com/TaranjyotS/FaceRecognition" target="_blank" class="project-block" data-category="ml">
+                    <img src="../static/images/projects/emotionDetection.jpeg" class="project-image">
+                    <h2>Emotion Detection via Face Recognition</h2>
+                    <p>Develop a face recognition model capable of predicting the emotion of a person based on an input image.</p>
+                </a>
+                <a href="https://github.com/TaranjyotS/Traffic-Management-using-Quality-Methodologies" target="_blank" class="project-block" data-category="quality">
+                    <img src="../static/images/projects/trafficManagement.jpeg" class="project-image">
+                    <h2>Traffic Management system</h2>
+                    <p>The project focusses on solving the problem of Traffic Delays due to Traffic Congestion. The country taken into account for the study purposes is India.</p>
+                </a>
+                <a href="https://github.com/TaranjyotS/Design-Improvement-and-Quality-Control-of-Boeing-737-Max-Aircraft" target="_blank" class="project-block" data-category="quality">
+                    <img src="../static/images/projects/boeing737Max.jpeg" class="project-image">
+                    <h2>Design Improvement and Quality Control of Boeing 737 Max Aircraft</h2>
+                    <p>Investigation for the root cause involved in the SDLC of the Boeing 737 Max design failure.</p>
+                </a>
+                <a href="https://github.com/TaranjyotS/OCR" target="_blank" class="project-block" data-category="ml">
+                    <img src="../static/images/projects/ocr.jpeg" class="project-image">
+                    <h2>Optical Character Recognition system</h2>
+                    <p>A machine learning system to recognize the hand-written characters (single digit numbers).</p>
+                </a>
+                <a href="https://github.com/TaranjyotS/Change-Microservice" target="_blank" class="project-block" data-category="web">
+                    <img src="../static/images/projects/microservice.jpeg" class="project-image">
+                    <h2>Microservice with Docker</h2>
+                    <p>Small Flask Microservice that makes change for given amount.</p>
+                </a>
+                <a href="{{ url_for('skills') }}"><span class="arrow-navigation-left">&larr;</span></a>
+                <a href="{{ url_for('experience') }}"><span class="arrow-navigation-right">&rarr;</span></a>
+            </div>
+          </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; 2024 Taranjyot Singh. All rights reserved.</p>
+            </div>
+            <div class="social-media-icons">
+                <a href="https://www.linkedin.com/in/taranjyot-singh/" class="fa fa-linkedin" target="_blank"></a>
+                <a href="https://github.com/TaranjyotS" class="fa fa-github" target="_blank"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
