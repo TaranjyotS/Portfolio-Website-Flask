@@ -391,6 +391,7 @@ footer {
 .roadmap h2 {
     text-align: start;
     margin-bottom: 4%;
+    margin-left: 10%;
     font-size: 2rem;
     color: #333;
 }
@@ -485,7 +486,7 @@ footer {
     top: -8%;
     right: -3%;
     width: 6%; /* Adjust the width as needed */
-    height: 13%; /* Adjust the height as needed */
+    height: 11%; /* Adjust the height as needed */
     border-radius: 50%;
     background-color: #fff;
     object-fit: fill; /* Ensures the image covers the container while maintaining its aspect ratio */

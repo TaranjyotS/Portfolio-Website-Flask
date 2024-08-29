@@ -1,3 +1,6 @@
+# Pycache files
+__pycache__/*
+
 # Images excluded
 static/images/companies/*
 static/images/projects/*
