@@ -1,32 +1,32 @@
 # Deploy the app on AWS EC2
 
 1. Launch an EC2 Instance
-- Log in to the AWS Management Console.
-- Navigate to the EC2 Dashboard by searching for `EC2` in the AWS services search bar.
-- Click on `Launch Instance`.
-- Choose an `Amazon Machine Image` (AMI): Select an AMI, such as the `Ubuntu Server 20.04 LTS`.
-- Choose an Instance Type: For basic web applications, `t2.micro` is sufficient and free-tier eligible.
-- Configure Instance: Configure settings as needed. For most purposes, the default settings are sufficient.
-- Add Storage: You can stick with the default settings or adjust according to your needs.
-- Add Tags: Tags are optional but useful for managing instances.
-- Configure Security Group: Create a new security group with rules allowing `HTTP (port 80)`, `HTTPS (port 443)`, and `SSH (port 22)`.
-- Review and Launch: Review your settings and launch the instance. You’ll need to create or select an existing key pair to access your instance via SSH.
+   - Log in to the AWS Management Console.
+   - Navigate to the EC2 Dashboard by searching for `EC2` in the AWS services search bar.
+   - Click on `Launch Instance`.
+   - Choose an `Amazon Machine Image` (AMI): Select an AMI, such as the `Ubuntu Server 20.04 LTS`.
+   - Choose an Instance Type: For basic web applications, `t2.micro` is sufficient and free-tier eligible.
+   - Configure Instance: Configure settings as needed. For most purposes, the default settings are sufficient.
+   - Add Storage: You can stick with the default settings or adjust according to your needs.
+   - Add Tags: Tags are optional but useful for managing instances.
+   - Configure Security Group: Create a new security group with rules allowing `HTTP (port 80)`, `HTTPS (port 443)`, and `SSH (port 22)`.
+   - Review and Launch: Review your settings and launch the instance. You’ll need to create or select an existing key pair to access your instance via SSH.
 
 2. Connect to Your EC2 Instance
-- Download your key pair (.pem file), for example `ec2-key.pem`.
-- Change permissions of the `.pem` file.
+   - Download your key pair (.pem file), for example `ec2-key.pem`.
+   - Change permissions of the `.pem` file.
 
 ```bash
 chmod 400 your-key.pem
 ```
 
-- You can verify the permissions of the key file to ensure they are correctly set.
+   - You can verify the permissions of the key file to ensure they are correctly set.
 
 ```bash
 ls -l ~/your-key.pem
 ```
 
-- Connect to your instance.
+   - Connect to your instance.
 
 ```bash
 ssh -i "~/your-key.pem" ubuntu@your-ec2-public-dns
@@ -36,14 +36,14 @@ ssh -i "~/your-key.pem" ubuntu@your-ec2-public-dns
 
 3. Transfer files to EC2
 
-- Use SCP to Transfer Files
-- Transfer your Flask application to the EC2 instance.
+   - Use SCP to Transfer Files
+   - Transfer your Flask application to the EC2 instance.
 
 ```bash
 scp -i "~/your-key.pem" -r /path/to/your-project ubuntu@your-ec2-public-dns:/home/ubuntu/
 ```
 
-- SSH into your EC2 instance.
+   - SSH into your EC2 instance.
 
 ```bash
 ssh -i "your-key.pem" ubuntu@your-ec2-public-dns
@@ -51,15 +51,15 @@ ssh -i "your-key.pem" ubuntu@your-ec2-public-dns
 
 4. Set up your EC2 instance
 
-- Update and Install Software
-- Update packages and install Python, pip.
+   - Update and Install Software
+   - Update packages and install Python, pip.
 
 ```bash
 sudo apt update
 sudo apt install python3-pip
 ```
 
-- Install Gunicorn and Nginx.
+   - Install Gunicorn and Nginx.
 
 ```bash
 sudo apt install gunicorn nginx
@@ -67,13 +67,13 @@ sudo apt install gunicorn nginx
 
 5. Configure Your Flask Application
 
-- Navigate to your project directory.
+   - Navigate to your project directory.
 
 ```bash
 cd /home/ubuntu/your-project
 ```
 
-- Install project dependencies.
+   - Install project dependencies.
 
 ```bash
 pip install -r requirements.txt
@@ -87,10 +87,10 @@ sudo apt install python3-<package-name>
 
 6. Configure Gunicorn
 
-- Start Gunicorn
-    - w 4 specifies 4 worker processes.
-    - b 0.0.0.0:8000 binds Gunicorn to all IP addresses on port 8000.
-    - wsgi:app refers to the app object in wsgi.py.
+   - Start Gunicorn
+       - w 4 specifies 4 worker processes.
+       - b 0.0.0.0:8000 binds Gunicorn to all IP addresses on port 8000.
+       - wsgi:app refers to the app object in wsgi.py.
 
 ```bash
 gunicorn -w 4 -b 0.0.0.0:8000 wsgi:app
@@ -98,13 +98,13 @@ gunicorn -w 4 -b 0.0.0.0:8000 wsgi:app
 
 7. Configure Nginx
 
-- Create an Nginx configuration file for your Flask app.
+   - Create an Nginx configuration file for your Flask app.
 
 ```bash
 sudo nano /etc/nginx/sites-available/your-project
 ```
     
-- Add the following configuration.
+   - Add the following configuration.
 
 ```bash
 server {
@@ -137,19 +137,19 @@ server {
 (Invoke-RestMethod -Uri "http://ifconfig.me").Trim()
 ```
 
-- Enable the Nginx configuration
+   - Enable the Nginx configuration
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/your-project /etc/nginx/sites-enabled
 ```
 
-- Test Nginx configuration
+   - Test Nginx configuration
 
 ```bash
 sudo nginx -t
 ```
 
-- Restart Nginx.
+   - Restart Nginx.
 
 ```bash
 sudo systemctl restart nginx
@@ -159,13 +159,13 @@ sudo systemctl restart nginx
 
 ### Troubleshooting
 
-- Ensure that your Flask application (e.g., running with Gunicorn) is active and listening on the port specified in the Nginx configuration. For example:
+   - Ensure that your Flask application (e.g., running with Gunicorn) is active and listening on the port specified in the Nginx configuration. For example:
 
 ```bash
 gunicorn --bind 127.0.0.1:8000 wsgi:app
 ```
 
-- You can check nginx logs to see if something is not working.
+   - You can check nginx logs to see if something is not working.
 
 ```bash
 sudo tail -f /var/log/nginx/error.log
@@ -176,19 +176,19 @@ sudo cat /var/log/nginx/error.log
 sudo cat /var/log/nginx/access.log
 ```
 
-- Verify DNS Configuration
+   - Verify DNS Configuration
 
 ```bash
 nslookup your_domain.com
 ```
 
-- Check Nginx Configuration
+   - Check Nginx Configuration
 
 ```bash
 sudo systemctl status nginx
 ```
 
-- Server Reachability, either by ping or telnet
+   - Server Reachability, either by ping or telnet
 
 ```bash
 ping your_ip_address
@@ -198,13 +198,13 @@ ping your_ip_address
 telnet 99.247.33.55 80
 ```
 
-- Check server status.
+   - Check server status.
 
 ```bash
 ps aux | grep gunicorn
 ```
 
-- Verify Server Listening Ports
+   - Verify Server Listening Ports
 
 ```bash
 sudo ss -tuln
